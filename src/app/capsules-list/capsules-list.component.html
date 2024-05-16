@@ -1,0 +1,7 @@
+<h2>Liste des capsules SpaceX</h2>
+<div *ngFor="let capsule of capsules">
+  <h3>{{ capsule.capsule_serial }}</h3>
+  <p>Type: {{ capsule.type }}</p>
+  <p>Statut: {{ capsule.status }}</p>
+  <p>Date de lancement: {{ capsule.original_launch }}</p>
+</div>
