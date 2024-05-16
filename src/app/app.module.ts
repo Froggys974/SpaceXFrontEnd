@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchListComponent } from './launch-list/launch-list.component';
 import { CapsulesListComponent } from './capsules-list/capsules-list.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LaunchListComponent,
-    CapsulesListComponent
+    CapsulesListComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,
