@@ -14,13 +14,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import {NgSelectModule } from '@ng-select/ng-select';
 import { ThreeDViewerComponent } from './three-dviewer/three-dviewer.component';
+import { IndexPageComponent } from './index-page/index-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     LaunchListComponent,
     CapsulesListComponent,
     AppHeaderComponent,
-    ThreeDViewerComponent
+    ThreeDViewerComponent,
+    IndexPageComponent
   ],
   imports: [
     BrowserModule,

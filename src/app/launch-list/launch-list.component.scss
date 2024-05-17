@@ -13,13 +13,13 @@
     flex-direction: column;
     margin-bottom: 10px;
   }
-  
+
   .filter-item label {
     font-weight: bold;
     margin-bottom: 5px;
     color: rgba(243, 221, 221, 0.801); /* Couleur jaune-or pour les labels */
   }
-  
+
   .filter-item input,
   .filter-item select {
     padding: 10px;
@@ -29,20 +29,19 @@
     background-color: #1a1a1a; /* Fond sombre pour les champs de saisie */
     color: #ffffff; /* Texte blanc */
   }
-  
+
   .filter-item input:focus,
   .filter-item select:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre bleue lumineuse pour le focus */
   }
-  
+
   .filter-item input::placeholder {
     color: #999999; /* Couleur des placeholders */
   }
-  
 }
-.launchList{
+.launchList {
   height: 82.2vh;
   display: flex;
   flex-direction: column;
@@ -53,18 +52,17 @@
     width: 98%;
     overflow: hidden;
     text-align: center;
-    h2{
+    h2 {
       margin-bottom: 4vh;
     }
   }
-  
+
   .carousel {
     display: flex;
     transition: transform 0.3s ease-in-out;
     height: 40vh;
-   
   }
-  
+
   .carousel-item {
     flex: 0 0 20%;
     display: flex;
@@ -85,36 +83,36 @@
     flex: 0 0 20%;
     margin: 20px;
   }
-  
+
   .carousel-item:hover {
     transform: scale(1.1);
   }
-  
+
   .carousel img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 20px;
   }
-  
+
   .launch-details {
     text-align: center;
   }
-  
+
   .launch-details h3 {
     margin: 0;
     font-size: 24px;
   }
-  
+
   .launch-details p {
     margin: 5px 0;
   }
-  
+
   .succes {
     font-size: 36px;
     font-weight: bold;
   }
-  
+
   .carousel-btn {
     position: absolute;
     top: 55%;
@@ -134,11 +132,11 @@
       }
     }
   }
-  
+
   .prev {
     left: 10px;
   }
-  
+
   .next {
     right: 10px;
   }
@@ -146,48 +144,47 @@
   .prev:focus polyline {
     stroke-width: 3;
   }
-  
+
   .prev:active polyline {
     stroke-width: 6;
     transition: all 100ms ease-in-out;
   }
-  
+
   .next:hover polyline,
   .next:focus polyline {
     stroke-width: 3;
   }
-  
+
   .next:active polyline {
     stroke-width: 6;
     transition: all 100ms ease-in-out;
   }
-  
+
   // /* Responsive Design */
   // @media (max-width: 1200px) {
   //   .carousel-item {
   //     flex: 0 0 25%;
   //   }
   // }
-  
+
   // @media (max-width: 992px) {
   //   .carousel-item {
   //     flex: 0 0 33.33%;
   //   }
   // }
-  
+
   // @media (max-width: 768px) {
   //   .carousel-item {
   //     flex: 0 0 50%;
   //   }
   // }
-  
+
   // @media (max-width: 576px) {
   //   .carousel-item {
   //     flex: 0 0 100%;
   //   }
   // }
 }
-
 
 .arrow {
   cursor: pointer;
@@ -212,103 +209,115 @@
   justify-content: center;
   margin-bottom: 15vh;
 
-  a{
+  a {
     position: relative;
     padding: 25px 30px;
-    margin: 40px 0; color: #03e9f4;
+    margin: 40px 0;
+    color: #03e9f4;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.5s; letter-spacing: 4px;
-    overflow: hidden; margin-right: 50px;
-}
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+  }
 
-a:hover{
-    background: #03e9f4; color: #050801;
-}
+  a:hover {
+    background: #03e9f4;
+    color: #050801;
+  }
 
-a span{
+  a span {
     position: absolute;
     display: block;
-}
+  }
 
-a span:nth-child(1){
+  a span:nth-child(1) {
     top: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#03e9f4);
+    background: linear-gradient(90deg, transparent, #03e9f4);
     animation: animate1 1s linear infinite;
-}
+  }
 
-@keyframes animate1{
-    0%{
-        left: -100%;
+  @keyframes animate1 {
+    0% {
+      left: -100%;
     }
-    50%,100%{
-        left: 100%;
+    50%,
+    100% {
+      left: 100%;
     }
-}
-a span:nth-child(2){
-    top: -100%; right: 0;
-    width: 2px; height: 100%;
-    background: linear-gradient(180deg,transparent,#03e9f4);
+  }
+  a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
     animation: animate2 1s linear infinite;
     animation-delay: 0.35s;
-}
+  }
 
-@keyframes animate2{
-    0%{ top: -100%; }
-    50%,100%{ top: 100%; }
-}
+  @keyframes animate2 {
+    0% {
+      top: -100%;
+    }
+    50%,
+    100% {
+      top: 100%;
+    }
+  }
 
-a span:nth-child(3){
+  a span:nth-child(3) {
     bottom: 0;
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg,transparent,#03e9f4);
+    background: linear-gradient(270deg, transparent, #03e9f4);
     animation: animate3 1s linear infinite;
-    animation-delay: 0.50s;
-}
+    animation-delay: 0.5s;
+  }
 
-@keyframes animate3{
-    0%{
-        right: -100%;
+  @keyframes animate3 {
+    0% {
+      right: -100%;
     }
-    50%,100%{
-        right: 100%;
+    50%,
+    100% {
+      right: 100%;
     }
-}
-a span:nth-child(4){
+  }
+  a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#03e9f4);
+    background: linear-gradient(360deg, transparent, #03e9f4);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
-}
+  }
 
-@keyframes animate4{
-    0%{
-        bottom: -100%;
+  @keyframes animate4 {
+    0% {
+      bottom: -100%;
     }
-    50%,100%{
-        bottom: 100%;
+    50%,
+    100% {
+      bottom: 100%;
     }
+  }
 }
-}
-
-
 
 .nextLaunch {
   display: flex;
-  align-content:flex-start; /* Alignement vertical en haut */
+  align-content: flex-start; /* Alignement vertical en haut */
   border-radius: 10px;
   padding: 20px;
   height: 96vh;
   flex-wrap: wrap;
-  .scroll-button-container{
+  .scroll-button-container {
     width: 100%;
     margin: 5vh;
   }
@@ -331,7 +340,6 @@ a span:nth-child(4){
   display: flex;
   flex-direction: column;
   color: #fff; /* Texte blanc */
-
 }
 
 .title-container {
@@ -395,7 +403,3 @@ a:hover {
   z-index: -1; /* Place le fond derrière le contenu */
   border-radius: 10px;
 }
-
-
-
-
