@@ -60,8 +60,8 @@ export class ThreeDViewerComponent implements OnInit, AfterViewInit {
       });
       
       scene.add(object);
-      object.position.y -= 110;
-      object.scale.set(9, 9, 9);
+      object.position.y -= 190;
+      object.scale.set(10, 10, 10);
       animate();
     });
     

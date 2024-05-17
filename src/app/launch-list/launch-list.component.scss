@@ -6,6 +6,8 @@
   justify-content: center;
   gap: 50px;
   border-radius: 10px;
+  height: 8vh;
+  margin-block: 3vh 1vh;
   .filter-item {
     display: flex;
     flex-direction: column;
@@ -40,138 +42,152 @@
   }
   
 }
-.carousel-container {
-  position: relative;
-  width: 98%;
-  overflow: hidden;
-  text-align: center;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-item {
-  flex: 0 0 20%;
+.launchList{
+  height: 82.2vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  background-color: rgba(50, 49, 49, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-.animationLaunch {
-  transition: transform 0.5s ease-in-out;
-  transform: translateY(-100vh);
-  flex: 0 0 20%;
-  margin: 20px;
-}
+  justify-content: space-between;
 
-.carousel-item:hover {
-  transform: scale(1.1);
-}
-
-.carousel img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-.launch-details {
-  text-align: center;
-}
-
-.launch-details h3 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.launch-details p {
-  margin: 5px 0;
-}
-
-.succes {
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  // background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-  background: transparent;
-  outline: 0;
-  svg {
-    padding: 5px;
-    polyline {
-      transition: all 250ms ease-in-out;
+  .carousel-container {
+    position: relative;
+    width: 98%;
+    overflow: hidden;
+    text-align: center;
+    h2{
+      margin-bottom: 4vh;
     }
   }
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-.prev:hover polyline,
-.prev:focus polyline {
-  stroke-width: 3;
-}
-
-.prev:active polyline {
-  stroke-width: 6;
-  transition: all 100ms ease-in-out;
-}
-
-.next:hover polyline,
-.next:focus polyline {
-  stroke-width: 3;
-}
-
-.next:active polyline {
-  stroke-width: 6;
-  transition: all 100ms ease-in-out;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .carousel-item {
-    flex: 0 0 25%;
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    height: 40vh;
+   
   }
+  
+  .carousel-item {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background-color: rgba(50, 49, 49, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-wrap: pretty;
+  }
+  .animationLaunch {
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(-100vh);
+    flex: 0 0 20%;
+    margin: 20px;
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .carousel img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .launch-details {
+    text-align: center;
+  }
+  
+  .launch-details h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .launch-details p {
+    margin: 5px 0;
+  }
+  
+  .succes {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    // background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    background: transparent;
+    outline: 0;
+    svg {
+      padding: 5px;
+      polyline {
+        transition: all 250ms ease-in-out;
+      }
+    }
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  .prev:hover polyline,
+  .prev:focus polyline {
+    stroke-width: 3;
+  }
+  
+  .prev:active polyline {
+    stroke-width: 6;
+    transition: all 100ms ease-in-out;
+  }
+  
+  .next:hover polyline,
+  .next:focus polyline {
+    stroke-width: 3;
+  }
+  
+  .next:active polyline {
+    stroke-width: 6;
+    transition: all 100ms ease-in-out;
+  }
+  
+  // /* Responsive Design */
+  // @media (max-width: 1200px) {
+  //   .carousel-item {
+  //     flex: 0 0 25%;
+  //   }
+  // }
+  
+  // @media (max-width: 992px) {
+  //   .carousel-item {
+  //     flex: 0 0 33.33%;
+  //   }
+  // }
+  
+  // @media (max-width: 768px) {
+  //   .carousel-item {
+  //     flex: 0 0 50%;
+  //   }
+  // }
+  
+  // @media (max-width: 576px) {
+  //   .carousel-item {
+  //     flex: 0 0 100%;
+  //   }
+  // }
 }
 
-@media (max-width: 992px) {
-  .carousel-item {
-    flex: 0 0 33.33%;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 50%;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-item {
-    flex: 0 0 100%;
-  }
-}
 
 .arrow {
   cursor: pointer;
@@ -191,46 +207,195 @@
   left: 58%;
 }
 
+.scroll-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15vh;
+
+  a{
+    position: relative;
+    padding: 25px 30px;
+    margin: 40px 0; color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s; letter-spacing: 4px;
+    overflow: hidden; margin-right: 50px;
+}
+
+a:hover{
+    background: #03e9f4; color: #050801;
+}
+
+a span{
+    position: absolute;
+    display: block;
+}
+
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%; right: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.35s;
+}
+
+@keyframes animate2{
+    0%{ top: -100%; }
+    50%,100%{ top: 100%; }
+}
+
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+}
+
+
+
 .nextLaunch {
   display: flex;
-  align-items: flex-start; /* Alignement vertical en haut */
+  align-content:flex-start; /* Alignement vertical en haut */
+  border-radius: 10px;
+  padding: 20px;
+  height: 96vh;
+  flex-wrap: wrap;
+  .scroll-button-container{
+    width: 100%;
+    margin: 5vh;
+  }
 }
 
 .nextLaunch > app-three-dviewer {
   flex: 1; /* Occupe 25% de l'espace */
-  max-width: 25%; /* Limite à 25% de l'espace */
+  max-width: 30%; /* Limite à 25% de l'espace */
   margin-right: 20px; /* Marge de séparation */
 }
 
 .nextLaunch > .nextLaunchDetail {
   flex: 3; /* Occupe 75% de l'espace */
-  max-width: 75%; /* Limite à 75% de l'espace */
+  max-width: 70%; /* Limite à 75% de l'espace */
+  position: relative; /* Nécessaire pour l'image de fond */
+  padding: 20px;
 }
 
 .nextLaunchDetail {
-  h2 {
-    margin-top: 0; /* Supprime la marge supérieure */
-  }
+  display: flex;
+  flex-direction: column;
+  color: #fff; /* Texte blanc */
 
-  ul {
-    list-style: none; /* Supprime les puces */
-    padding: 0; /* Supprime le remplissage */
-  }
+}
 
-  li {
-    margin-bottom: 10px; /* Espacement entre les éléments de liste */
-  }
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mission-patch {
+  width: 100px; /* Ajustez cette valeur selon vos besoins */
+  height: auto;
+}
+
+.nextLaunchDetail h2 {
+  margin-top: 0; /* Supprime la marge supérieure */
+}
+
+.launch-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.launch-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.launch-info-item {
+  flex: 1;
+  margin-bottom: 10px; /* Espacement entre les éléments de liste */
+  text-align: start;
+}
+
+.launch-info.full-width {
+  flex-direction: column;
 }
 
 img {
-  max-width: 100%; /* Image réactive à la taille du conteneur parent */
+  max-width: 100px; /* Image réactive à la taille du conteneur parent */
 }
 
 a {
   color: blue; /* Couleur des liens */
   text-decoration: none; /* Supprime la soulignement par défaut */
-  &:hover {
-    text-decoration: underline; /* Soulignement au survol */
-  }
 }
+
+a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+.nextLaunchDetail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 49, 49, 0.7); /* Fond sombre avec opacité */
+  z-index: -1; /* Place le fond derrière le contenu */
+  border-radius: 10px;
+}
+
+
+
 

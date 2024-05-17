@@ -1,4 +1,4 @@
-<div class="filter-container">
+<div class="filter-container" #top>
   <div class="filter-item">
     <label for="mission-name">Filtrer par:</label>
     <input id="mission-name" type="text" placeholder="Nom, Lieu, année ou mission"
@@ -23,56 +23,83 @@
     </select>
   </div>
 </div>
-<div class="carousel-container">
-  <h2>Liste des Lancements SpaceX</h2>
-  <button class="carousel-btn prev" (click)="prev()">
-    <svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+<div class="launchList">
+  <div class="carousel-container">
+    <h2>Liste des Lancements SpaceX</h2>
+    <button class="carousel-btn prev" (click)="prev()">
+      <svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+        <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
           45.63,75.8 0.375,38.087 45.63,0.375 " />
-    </svg>
-  </button>
-  <div class="carousel" #carousel>
-    <div *ngFor="let launch of launches;let i =index"
-      [ngClass]="{'animationLaunch':selectedLaunchIndex===i,'carousel-item': selectedLaunchIndex !== i}"
-      (click)="navigateToLaunchDetails(i)">
-      <img src="{{launch.links.mission_patch_small}}" alt="">
-      <div class="launch-details">
-        <h3>{{ launch.mission_name }}</h3>
-        <p>{{ launch.launch_date_local }}</p>
-        <p>{{ launch.launch_site.site_name_long }}</p>
-        <span class="succes">{{ launch.launch_success ? 'Succès' : 'Échec' }}</span>
+      </svg>
+    </button>
+    <div class="carousel" #carousel>
+      <div *ngFor="let launch of launches;let i =index"
+        [ngClass]="{'animationLaunch':selectedLaunchIndex===i,'carousel-item': selectedLaunchIndex !== i}"
+        (click)="navigateToLaunchDetails(i)">
+        <img src="{{launch.links.mission_patch_small}}" alt="">
+        <div class="launch-details">
+          <h3>{{ launch.mission_name }}</h3>
+          <p>{{ launch.launch_date_local }}</p>
+          <p>{{ launch.launch_site.site_name_long }}</p>
+          <span class="succes">{{ launch.launch_success ? 'Succès' : 'Échec' }}</span>
+        </div>
       </div>
     </div>
-  </div>
-  <button class="carousel-btn next" (click)="next()">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px"
-      viewBox="0 0 50 80" xml:space="preserve">
-      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+    <button class="carousel-btn next" (click)="next()">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px"
+        viewBox="0 0 50 80" xml:space="preserve">
+        <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
           0.375,0.375 45.63,38.087 0.375,75.8 " />
-    </svg>
-  </button>
+      </svg>
+    </button>
+  </div>
+  <div class="scroll-button-container">
+    <a (click)="scrollTo('nextLaunch')">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Découvrez le prochain lancement
+    </a>
+  </div>
 </div>
-<div class="nextLaunch">
+<div class="nextLaunch" #nextLaunch>
+  <div class="scroll-button-container">
+    <a (click)="scrollTo('top')">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Revenez à la liste de tous les lancements
+    </a>
+  </div>
   <app-three-dviewer></app-three-dviewer>
   <div class="nextLaunchDetail">
-    <h2>Mission Details</h2>
-  <ul>
-    <li><strong>Mission Name:</strong> CRS-21</li>
-    <li><strong>Flight Number:</strong> 110</li>
-    <li><strong>Launch Date:</strong> December 6, 2020</li>
-    <li><strong>Launch Time:</strong> 11:17 AM (Local Time)</li>
-    <li><strong>Launch Site:</strong> Kennedy Space Center LC 39A</li>
-    <li><strong>Launch Details:</strong> SpaceX's 21st ISS resupply mission on behalf of NASA and the first under the CRS-2 contract, this mission brings essential supplies to the International Space Station using the cargo variant of SpaceX's Dragon 2 spacecraft. The external payload for this mission is the Nanoracks Bishop Airlock. Falcon 9 and Dragon launch from LC-39A, Kennedy Space Center and the booster is expected to land on an ASDS. The mission will be complete with return and recovery of the Dragon capsule and down cargo.</li>
-  </ul>
-  <h2>Rocket Details</h2>
-  <ul>
-    <li><strong>Rocket Name:</strong> Falcon 9</li>
-    <li><strong>Rocket Type:</strong> FT</li>
-  </ul>
-  <h2>Links</h2>
-  <ul>
-    <li><strong>Mission Patch (Small):</strong> <img src="https://imgur.com/jHNFSY6.png" alt="Mission Patch (Small)"></li>
-    <li><strong>Reddit Campaign:</strong> <a href="https://www.reddit.com/r/spacex/comments/jw8bfe/crs21_launch_campaign_thread/">Reddit Campaign Thread</a></li>
-  </ul>
+    <div class="title-container">
+      <h2>Prochain Lancement</h2>
+      <img src="https://imgur.com/jHNFSY6.png" alt="Patch de Mission (Petit)" class="mission-patch">
+    </div>
+    <div class="launch-details">
+      <div class="launch-info">
+        <div class="launch-info-item"><strong>Nom de la Mission:</strong> CRS-21</div>
+        <div class="launch-info-item"><strong>Numéro de Vol:</strong> 110</div>
+      </div>
+      <div class="launch-info">
+        <div class="launch-info-item"><strong>Date de Lancement:</strong> 6 Décembre 2020</div>
+        <div class="launch-info-item"><strong>Heure de Lancement:</strong> 11:17 AM (Heure Locale)</div>
+      </div>
+      <div class="launch-info full-width">
+        <div class="launch-info-item"><strong>Détails de la Mission:</strong> La 21e mission de ravitaillement de SpaceX
+          pour l'ISS au nom de la NASA et la première sous le contrat CRS-2, cette mission apporte des fournitures
+          essentielles à la Station spatiale internationale en utilisant la variante cargo du vaisseau spatial Dragon 2
+          de SpaceX. La charge utile externe pour cette mission est la Nanoracks Bishop Airlock. Falcon 9 et Dragon
+          décollent de LC-39A, Centre spatial Kennedy, et le booster devrait atterrir sur un ASDS. La mission se
+          terminera par le retour et la récupération de la capsule Dragon et de la cargaison.</div>
+      </div>
+      <div class="launch-info">
+        <div class="launch-info-item"><strong>Nom de la Fusée:</strong> Falcon 9</div>
+        <div class="launch-info-item"><strong>Type de Fusée:</strong> FT</div>
+      </div>
+    </div>
   </div>
 </div>
