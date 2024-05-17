@@ -24,4 +24,7 @@ export class SpaceXService {
   getLauncheDetails(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/launches/${id}`);
   }
+  getNextLaunch(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/launches/next`);
+  }
 }
