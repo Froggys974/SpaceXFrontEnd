@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Analytics } from '@vercel/analytics/react';
 
 
 @Component({
