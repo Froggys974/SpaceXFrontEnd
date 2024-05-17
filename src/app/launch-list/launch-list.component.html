@@ -1,10 +1,78 @@
-<h2>Liste des Lancements SpaceX</h2>
+<div class="filter-container">
+  <div class="filter-item">
+    <label for="mission-name">Filtrer par:</label>
+    <input id="mission-name" type="text" placeholder="Nom, Lieu, année ou mission"
+      [(ngModel)]="filterCriteria.mission_name" (input)="applyFilters()">
+  </div>
 
-<ul>
-  <li *ngFor="let launch of launches">
-    <h3>{{ launch.mission_name }}</h3>
-    <p>Date de lancement: {{ launch.launch_date_local }}</p>
-    <p>Site de lancement: {{ launch.launch_site.site_name_long }}</p>
-    <p>Réutilisable: {{ launch.reusable ? 'Oui' : 'Non' }}</p>
-  </li>
-</ul>
+  <div class="filter-item">
+    <label for="launch-success">Launch Success:</label>
+    <select id="launch-success" [(ngModel)]="filterCriteria.launch_success" (change)="applyFilters()">
+      <option [ngValue]="null">All</option>
+      <option [ngValue]="true">Success</option>
+      <option [ngValue]="false">Failure</option>
+    </select>
+  </div>
+
+  <div class="filter-item">
+    <label for="upcoming">Upcoming:</label>
+    <select id="upcoming" [(ngModel)]="filterCriteria.upcoming" (change)="applyFilters()">
+      <option [ngValue]="null">All</option>
+      <option [ngValue]="true">Upcoming</option>
+      <option [ngValue]="false">Past</option>
+    </select>
+  </div>
+</div>
+<div class="carousel-container">
+  <h2>Liste des Lancements SpaceX</h2>
+  <button class="carousel-btn prev" (click)="prev()">
+    <svg width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+          45.63,75.8 0.375,38.087 45.63,0.375 " />
+    </svg>
+  </button>
+  <div class="carousel" #carousel>
+    <div *ngFor="let launch of launches;let i =index"
+      [ngClass]="{'animationLaunch':selectedLaunchIndex===i,'carousel-item': selectedLaunchIndex !== i}"
+      (click)="navigateToLaunchDetails(i)">
+      <img src="{{launch.links.mission_patch_small}}" alt="">
+      <div class="launch-details">
+        <h3>{{ launch.mission_name }}</h3>
+        <p>{{ launch.launch_date_local }}</p>
+        <p>{{ launch.launch_site.site_name_long }}</p>
+        <span class="succes">{{ launch.launch_success ? 'Succès' : 'Échec' }}</span>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-btn next" (click)="next()">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px"
+      viewBox="0 0 50 80" xml:space="preserve">
+      <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+          0.375,0.375 45.63,38.087 0.375,75.8 " />
+    </svg>
+  </button>
+</div>
+<div class="nextLaunch">
+  <app-three-dviewer></app-three-dviewer>
+  <div class="nextLaunchDetail">
+    <h2>Mission Details</h2>
+  <ul>
+    <li><strong>Mission Name:</strong> CRS-21</li>
+    <li><strong>Flight Number:</strong> 110</li>
+    <li><strong>Launch Date:</strong> December 6, 2020</li>
+    <li><strong>Launch Time:</strong> 11:17 AM (Local Time)</li>
+    <li><strong>Launch Site:</strong> Kennedy Space Center LC 39A</li>
+    <li><strong>Launch Details:</strong> SpaceX's 21st ISS resupply mission on behalf of NASA and the first under the CRS-2 contract, this mission brings essential supplies to the International Space Station using the cargo variant of SpaceX's Dragon 2 spacecraft. The external payload for this mission is the Nanoracks Bishop Airlock. Falcon 9 and Dragon launch from LC-39A, Kennedy Space Center and the booster is expected to land on an ASDS. The mission will be complete with return and recovery of the Dragon capsule and down cargo.</li>
+  </ul>
+  <h2>Rocket Details</h2>
+  <ul>
+    <li><strong>Rocket Name:</strong> Falcon 9</li>
+    <li><strong>Rocket Type:</strong> FT</li>
+  </ul>
+  <h2>Links</h2>
+  <ul>
+    <li><strong>Mission Patch (Small):</strong> <img src="https://imgur.com/jHNFSY6.png" alt="Mission Patch (Small)"></li>
+    <li><strong>Reddit Campaign:</strong> <a href="https://www.reddit.com/r/spacex/comments/jw8bfe/crs21_launch_campaign_thread/">Reddit Campaign Thread</a></li>
+  </ul>
+  </div>
+</div>
